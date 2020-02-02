@@ -93,3 +93,22 @@ def wav2npy(channel, wavPath, npyPath):
 		else:
 			source = np.concatenate((source, np.load("%s/%02d.wav"%(wavPath, i+1))), axis=1)
 	np.save("%s/sound.npy"%(npyPath))
+
+def binary2float(frames, length, sampwidth):
+    # binary -> int
+    if sampwidth == 1:
+        data = np.frombuffer(frames, dtype=np.uint8)
+        data = data - 128
+    elif sampwidth == 2:
+        data = np.frombuffer(frames, dtype=np.int16)
+    elif sampwidth == 3:
+        a8 = np.fromstring(frames, dtype=np.uint8)
+        tmp = np.empty([length, 4], dtype=np.uint8)
+        tmp[:, :sampwidth] = a8.reshape(-1, sampwidth)
+        tmp[:, sampwidth:] = (tmp[:, sampwidth - 1:sampwidth] >> 7) * 255
+        data = tmp.view('int32')[:, 0]
+    elif sampwidth == 4:
+        data = np.frombuffer(frames, dtype=np.int32)
+    # Normalize to -1.0 ≤ sample < 1.0
+    data = data.astype(float) / 2 ** (8 * sampwidth - 1)
+    return data
