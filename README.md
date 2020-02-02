@@ -45,3 +45,14 @@ float -> binary変換
 
 ### pinknoisesignal = measurement.pinknoise(t, fs)
 ピンクノイズ信号を作る
+
+### ret = make_sweepsound(A, fs, start_freq, end_freq, sec)
+スイープサイン信号を作る
+    ---------------------
+    A = 1     #振幅
+    fs = 44100 #サンプリング周波数
+    start_freq = 20  #始まりの周波数
+    end_freq = 20000 #終わりの周波数
+    sec = 5   #秒
+    return
+    ---------------------
