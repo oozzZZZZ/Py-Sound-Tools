@@ -69,3 +69,22 @@ def make_sweepsound(A, fs, start_freq, end_freq, sec):
     ret = A * sin(phazes)
 
     return ret
+
+#信号が2の乗数になるように配列の頭にゼロをつける
+def pluszero(signal):
+    n = len(signal)
+    print(n)
+    i = 1
+    while ( i * 2 <= n):
+        i *= 2
+    print(i*2)
+    zero = np.zeros(i*2-n)
+    out = np.append(zero, signal)
+    return out
+
+#インパルス応答を計算する（sample_signalにスイープサイン信号、rec_signalに応答）
+def calIR(sample_signal,rec_signal):
+    rTSP = sample_signal[::-1]
+    ipls=np.real(sp.ifft(sp.fft(recTSP)*sp.fft(rTSP,recTSP.size)))
+    c=np.fft.fftshift(ipls/max(ipls))
+    return c
