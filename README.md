@@ -30,3 +30,10 @@ wavファイルを書き出します
 
 
 ## measurement.py
+実験に使ういろいろ
+
+### whitenoisesignal = measurement.whitenoise(t, fs)
+ホワイトノイズ信号を作る
+
+### pinknoisesignal = measurement.pinknoise(t, fs)
+ピンクノイズ信号を作る
