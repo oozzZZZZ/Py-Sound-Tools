@@ -112,3 +112,20 @@ def binary2float(frames, length, sampwidth):
     # Normalize to -1.0 ≤ sample < 1.0
     data = data.astype(float) / 2 ** (8 * sampwidth - 1)
     return data
+
+def float2binary(data, sampwidth):
+    data = (data * (2 ** (8 * sampwidth - 1) - 1)).reshape(data.size, 1)
+
+    if sampwidth == 1:
+        data = data + 128
+        frames = data.astype(np.uint8).tostring()
+    elif sampwidth == 2:
+        frames = data.astype(np.int16).tostring()
+    elif sampwidth == 3:
+        a32 = np.asarray(data, dtype = np.int32)
+        a8 = (a32.reshape(a32.shape + (1,)) >> np.array([0, 8, 16])) & 255
+        frames = a8.astype(np.uint8).tostring()
+    elif sampwidth == 4:
+        frames = data.astype(np.int32).tostring()
+
+    return frames
