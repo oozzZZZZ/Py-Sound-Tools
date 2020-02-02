@@ -27,3 +27,6 @@ wavファイルを書き出します
 ### wavefile.multi_write(datalist,filename,ch=1,fs=41000,sampwidth=2)
 データのリストを与えてやればマルチチャンネルのwavファイルを書き出します
 チャンネル数はリストのサイズから自動で設定します
+
+
+## measurement.py
