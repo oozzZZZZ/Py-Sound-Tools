@@ -57,7 +57,7 @@ def make_sweepsound(A, fs, start_freq, end_freq, sec):
 
     return
     ---------------------
-    pink: sweepsine signal (numpy array float64)
+    ret: sweepsine signal (numpy array float64)
     """
     
     freqs = linspace(start_freq, end_freq, num = int(round(fs * sec)))
