@@ -1,4 +1,4 @@
-def waveread(filename):
+def read(filename):
     #data -> binary data
     with wave.open(filename,mode='rb') as w:
         ch = w.getnchannels()
