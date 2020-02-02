@@ -14,8 +14,8 @@ pip install pyaudio
 
 ## wavefile.py
 
-### data, frame rate = wavefile.read(filename)
+### data, framerate = wavefile.read(filename)
 
 filename:Fullpath of wave-format data(monoral, stereo, multi channnel)
 
-return　```floatdara(or data list), frame rate```
+return　```floatdara(or data list), framerate```
