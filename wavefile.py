@@ -35,3 +35,11 @@ def read(filename):
         data=data
 
     return data,fs
+
+def write(data,filename,ch=1,fs=41000,sampwidth=2):
+    data = struct.pack("h" * len(data), *data)
+    with wave.open(filename,mode='wb') as w:
+        w.setsampwidth(sampwidth)
+        w.setnchannels(ch)
+        w.setframerate(fs)
+        w.writeframes(data)
