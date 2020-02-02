@@ -1,4 +1,6 @@
 import numpy as np
+from scipy import cumsum, sin, linspace
+from scipy import pi as mpi
 import scipy.fftpack as fft
 
 def whitenoise(t, fs):
@@ -40,3 +42,30 @@ def pinknoise(t, fs):
     pink = np.real(fft.ifft(PINK))
     pink /= np.max(np.abs(pink))
     return pink
+
+def make_sweepsound(A, fs, start_freq, end_freq, sec):
+    """
+    make sweepsound.
+
+    prameters
+    ---------------------
+    A = 1     #振幅
+    fs = 44100 #サンプリング周波数
+    start_freq = 20  #始まりの周波数
+    end_freq = 20000 #終わりの周波数
+    sec = 5   #秒
+
+    return
+    ---------------------
+    pink: sweepsine signal (numpy array float64)
+    """
+    
+    freqs = linspace(start_freq, end_freq, num = int(round(fs * sec)))
+    ### 角周波数の変化量
+    phazes_diff = 2. * mpi * freqs / fs
+    ### 位相
+    phazes = cumsum(phazes_diff)
+    ### サイン波合成
+    ret = A * sin(phazes)
+
+    return ret
