@@ -1,3 +1,7 @@
+import wave
+import numpy as np
+import struct
+
 def read(filename):
     #data -> binary data
     with wave.open(filename,mode='rb') as w:
