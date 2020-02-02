@@ -67,3 +67,17 @@ def write(data,filename,ch=1,fs=41000,sampwidth=2):
         w.setnchannels(ch)
         w.setframerate(fs)
         w.writeframes(data)
+
+def multi_write(datalist,filename,ch=1,fs=41000,sampwidth=2):
+    out = []
+    for i in range(len(datalist[0])):
+        for j in range(len(datalist)):
+            ch = datalist[j]
+            out=np.append(out,ch[i])   
+    data = np.array(out)
+    data = struct.pack("h" * len(data), *data)
+    with wave.open(filename,mode='wb') as w:
+        w.setsampwidth(sampwidth)
+        w.setnchannels(ch)
+        w.setframerate(fs)
+        w.writeframes(data)
