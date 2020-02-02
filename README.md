@@ -18,4 +18,4 @@ pip install pyaudio
 
 filename:Fullpath of wave-format data(monoral, stereo, multi channnel)
 
-return　```floatdara(or data list), framerate```
+return　```floatdata(or data list), framerate```
