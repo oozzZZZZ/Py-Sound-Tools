@@ -7,4 +7,5 @@ Python3 Packages For Sound Signal Processing
 
 ```
 pip install numpy
+pip install pyaudio
 ```
