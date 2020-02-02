@@ -31,6 +31,12 @@ wavファイルを書き出します
 ### wavefile.wav2npy(channel, wavPath, npyPath):
 waveファイルをnumpyファイルに変換して保存
 
+### data = wavefile.binary2float(frames, length, sampwidth)
+binary -> int変換
+
+### frames = wavefile.float2binary(data, sampwidth)
+float -> binary変換
+
 ## measurement.py
 実験に使ういろいろ
 
