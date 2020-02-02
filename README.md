@@ -1,6 +1,6 @@
 # PySoundTools
 Python3 Packages For Sound Signal Processing
-
+自分用ツール
 
 # Preparation
 ## Required packages
@@ -28,6 +28,8 @@ wavファイルを書き出します
 データのリストを与えてやればマルチチャンネルのwavファイルを書き出します
 チャンネル数はリストのサイズから自動で設定します
 
+### wavefile.wav2npy(channel, wavPath, npyPath):
+waveファイルをnumpyファイルに変換して保存
 
 ## measurement.py
 実験に使ういろいろ
