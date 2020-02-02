@@ -81,3 +81,15 @@ def multi_write(datalist,filename,ch=1,fs=41000,sampwidth=2):
         w.setnchannels(ch)
         w.setframerate(fs)
         w.writeframes(data)
+
+def wav2npy(channel, wavPath, npyPath):
+	"""
+	convert .wav to .npy, only for multi channel
+
+	"""
+	for i in range(channel):
+		if i == 0:
+			source = np.load("%s/%02d.wav"%(wavPath, i+1))
+		else:
+			source = np.concatenate((source, np.load("%s/%02d.wav"%(wavPath, i+1))), axis=1)
+	np.save("%s/sound.npy"%(npyPath))
