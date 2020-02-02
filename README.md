@@ -63,3 +63,8 @@ float -> binary変換
     end_freq = 20000 #終わりの周波数
     sec = 5   #秒 
     
+### signal = pluszero(signal)
+信号が2の乗数になるように配列の頭にゼロをつける
+
+### ipls = calIR(sample_signal,rec_signal)
+インパルス応答を計算する（sample_signalにスイープサイン信号、rec_signalに応答）
