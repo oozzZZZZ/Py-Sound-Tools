@@ -6,6 +6,5 @@ Python3 Packages For Sound Signal Processing
 ### Required packages
 
 ```
-import numpy
-import wave
+pip install numpy
 ```
