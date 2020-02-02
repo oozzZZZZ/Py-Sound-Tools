@@ -44,24 +44,18 @@ float -> binary変換
 
 ### whitenoisesignal = measurement.whitenoise(t, fs)
 ホワイトノイズ信号を作る
-
-    ---
+    
     t:time
     fs:framelate
-    ---
-
-
+    
 ### pinknoisesignal = measurement.pinknoise(t, fs)
 ピンクノイズ信号を作る
-
-    ---
+    
     t:time
     fs:framelate
-    ---
-
+    
 ### ret = make_sweepsound(A, fs, start_freq, end_freq, sec)
 スイープサイン信号を作る
-
     
     A = 1     #振幅
     fs = 44100 #サンプリング周波数
