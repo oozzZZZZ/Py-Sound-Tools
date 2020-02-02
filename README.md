@@ -20,6 +20,7 @@ wavファイルを読み込んだり書き出したり
 wavファイルを読み込み、floatで出力します
 
 filename:Fullpath of wave-format data(monoral, stereo, multi channnel)
+
 return　```floatdata, framerate```
 
 ### data, framedata = wavefile.sepalate_read(filename)
@@ -27,4 +28,5 @@ return　```floatdata, framerate```
 wavファイルを読み込み、マルチチャンネルの場合チャンネルごとに分けてリストで出力します
 
 filename:Fullpath of wave-format data(monoral, stereo, multi channnel)
+
 return　```datalist, framerate```
