@@ -1,4 +1,4 @@
-# Py-Sound-Tools
+# PySoundTools
 Python3 Packages For Sound Signal Processing
 
 
