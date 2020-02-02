@@ -1,2 +1,11 @@
 # Py-Sound-Tools
-My Python3 Package For Signal Processing
+Python3 Packages For Sound Signal Processing
+
+
+## Preparation
+### Required packages
+
+```
+import numpy
+import wave
+```
