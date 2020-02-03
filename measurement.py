@@ -2,6 +2,9 @@ import numpy as np
 from scipy import cumsum, sin, linspace
 from scipy import pi as mpi
 import scipy.fftpack as fft
+import librosa
+from matplotlib import pyplot as plt
+% matplotlib inline
 
 def whitenoise(t, fs):
     """
@@ -88,3 +91,14 @@ def calIR(sample_signal,rec_signal):
     ipls=np.real(sp.ifft(sp.fft(recTSP)*sp.fft(rTSP,recTSP.size)))
     c=np.fft.fftshift(ipls/max(ipls))
     return c
+
+#スペクトログラム表示
+def disp_spectrogram(wav):
+    D = np.abs(librosa.stft(wav))
+    log_D = librosa.amplitude_to_db(D, ref=np.max) 
+    plt.figure(figsize=(12,3))
+    librosa.display.specshow(log_D, x_axis='time', y_axis='log') 
+    plt.title('Spectroram') #タイトル
+    plt.colorbar(format='%+02.0f dB') #カラーバー表示
+    plt.tight_layout() #コンパクトに表示
+    plt.show() #表示を出力 
