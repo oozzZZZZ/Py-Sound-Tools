@@ -8,6 +8,7 @@ Python3 Packages For Sound Signal Processing
 ```
 pip install numpy
 pip install pyaudio
+pip install librosa
 ```
 
 # Contents
@@ -68,3 +69,7 @@ float -> binary変換
 
 ### ipls = calIR(sample_signal,rec_signal)
 インパルス応答を計算する（sample_signalにスイープサイン信号、rec_signalに応答）
+
+### disp_spectrogram(wav)
+スペクトログラム表示
+スペクトログラム
