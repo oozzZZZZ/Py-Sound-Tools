@@ -6,10 +6,12 @@ Python3 Packages For Sound Signal Processing
 ## Required packages
 
 ```
-pip install numpy
-pip install pyaudio
-pip install librosa
+pip install numpy  (all)
+pip install pyaudio (SpectrumAnalyzer.py)
+pip install pyqtgraph (SpectrumAnalyzer.py)
+pip install librosa (measurement.py)
 ```
+
 
 # Contents
 
