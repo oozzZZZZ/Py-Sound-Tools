@@ -56,7 +56,7 @@ float -> binary変換
     fs:framelate
     
 ### ret = make_sweepsound(A, fs, start_freq, end_freq, sec)
-スイープサイン信号を作る
+swept-sine信号を作る
     
     A = 1     #振幅
     fs = 44100 #サンプリング周波数
