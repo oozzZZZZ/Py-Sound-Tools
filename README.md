@@ -75,3 +75,6 @@ swept-sine信号を作る
 ### disp_spectrogram(wav)
 スペクトログラム表示
 スペクトログラム
+
+## SpectrumAnalyzer.py
+高速スペクトラムアナライザー。pyaudioのストリーミングから音を入力。
